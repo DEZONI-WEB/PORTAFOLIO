@@ -197,6 +197,39 @@ footer{padding:26px 52px;border-top:0.5px solid var(--border2);display:flex;alig
 footer a{color:var(--dim);text-decoration:none;transition:color .2s;}
 footer a:hover{color:var(--gold);}
 
+/* NAVEGACIÓN ENTRE PROYECTOS */
+.project-nav{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  border-top:0.5px solid var(--border2);
+  background:var(--dark2);
+}
+.pnav-item{
+  display:flex;flex-direction:column;gap:10px;
+  padding:48px 52px;text-decoration:none;
+  transition:background .3s;
+}
+.pnav-item:hover{background:var(--dark3);}
+.pnav-prev{align-items:flex-start;}
+.pnav-next{align-items:flex-end;text-align:right;}
+.pnav-label{
+  font-size:9px;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--gold);
+}
+.pnav-title{
+  font-family:'Georgia',serif;
+  font-size:clamp(18px,2.5vw,28px);font-weight:normal;
+  color:var(--cream);letter-spacing:.05em;
+  line-height:1.1;text-transform:uppercase;
+}
+.pnav-arrow{
+  font-size:20px;color:var(--gold);
+  transition:transform .3s;display:block;
+}
+.pnav-prev:hover .pnav-arrow{transform:translateX(-6px);}
+.pnav-next:hover .pnav-arrow{transform:translateX(6px);}
+.pnav-divider{width:0.5px;background:var(--border2);}
+
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease;}
 .reveal.visible{opacity:1;transform:none;}
 
@@ -218,6 +251,10 @@ footer a:hover{color:var(--gold);}
   .fc.label,.fc.old{border-right:none;border-bottom:0.5px solid var(--border2);}
   footer{flex-direction:column;gap:8px;text-align:center;}
   .hero-meta{gap:20px;}
+  .project-nav{grid-template-columns:1fr;grid-template-rows:auto auto auto;}
+  .pnav-item{padding:32px 22px;}
+  .pnav-next{align-items:flex-start;text-align:left;}
+  .pnav-divider{width:100%;height:0.5px;}
 }
 </style>
 </head>
@@ -238,7 +275,7 @@ footer a:hover{color:var(--gold);}
 <!-- HERO -->
 <section class="s-hero">
   <img class="hero-bg-img" src="">
-    <div class="hero-grad"></div>
+  <div class="hero-grad"></div>
   <div class="hero-cnt">
     <div class="eyebrow">UX/UI · Rediseño Web · Rebranding</div>
     <h1 class="hero-title">Pure Alpaca<br><em>Antes y Después</em></h1>
@@ -261,9 +298,9 @@ footer a:hover{color:var(--gold);}
   <div class="slider-wrapper">
     <div class="slider-container" id="sliderContainer">
       <img class="slider-img-after" src="">
-        <div class="slider-img-before-wrap" id="beforeWrap">
+      <div class="slider-img-before-wrap" id="beforeWrap">
         <img class="slider-img-before" src="">
-          </div>
+      </div>
       <div class="slider-line" id="sliderLine"></div>
       <div class="slider-handle" id="sliderHandle">
         <svg viewBox="0 0 24 24"><polyline points="7,8 3,12 7,16"/><polyline points="17,8 21,12 17,16"/></svg>
@@ -290,7 +327,7 @@ footer a:hover{color:var(--gold);}
       <div class="screen-num-col"><span class="screen-num-txt">01 — HERO</span></div>
       <div class="screen-img-col">
         <img src="">
-          </div>
+      </div>
       <div class="screen-info-col">
         <div>
           <span class="screen-tag">Landing principal</span>
@@ -310,7 +347,7 @@ footer a:hover{color:var(--gold);}
       <div class="screen-num-col"><span class="screen-num-txt">02 — CATEGORÍAS</span></div>
       <div class="screen-img-col">
         <img src="">
-          </div>
+      </div>
       <div class="screen-info-col">
         <div>
           <span class="screen-tag">Navegación visual</span>
@@ -328,8 +365,8 @@ footer a:hover{color:var(--gold);}
     <div class="screen-strip reveal">
       <div class="screen-num-col"><span class="screen-num-txt">03 — PRODUCTOS</span></div>
       <div class="screen-img-col">
-        <img src="
-          </div>
+        <img src="">
+      </div>
       <div class="screen-info-col">
         <div>
           <span class="screen-tag">Grilla de productos</span>
@@ -349,7 +386,7 @@ footer a:hover{color:var(--gold);}
       <div class="screen-num-col"><span class="screen-num-txt">04 — MARCA</span></div>
       <div class="screen-img-col">
         <img src="">
-          </div>
+      </div>
       <div class="screen-info-col">
         <div>
           <span class="screen-tag">Storytelling de marca</span>
@@ -368,7 +405,7 @@ footer a:hover{color:var(--gold);}
       <div class="screen-num-col"><span class="screen-num-txt">05 — LISTADO</span></div>
       <div class="screen-img-col">
         <img src="">
-          </div>
+      </div>
       <div class="screen-info-col">
         <div>
           <span class="screen-tag">Página de categoría</span>
@@ -387,7 +424,7 @@ footer a:hover{color:var(--gold);}
       <div class="screen-num-col"><span class="screen-num-txt">06 — PRODUCTO</span></div>
       <div class="screen-img-col">
         <img src="">
-          </div>
+      </div>
       <div class="screen-info-col">
         <div>
           <span class="screen-tag">Ficha de producto — Variante 1</span>
@@ -407,7 +444,7 @@ footer a:hover{color:var(--gold);}
       <div class="screen-num-col"><span class="screen-num-txt">07 — SISTEMA</span></div>
       <div class="screen-img-col">
         <img src="">
-          </div>
+      </div>
       <div class="screen-info-col">
         <div>
           <span class="screen-tag">Ficha de producto — Variante 2</span>
@@ -441,8 +478,8 @@ footer a:hover{color:var(--gold);}
     <div class="cmp-grid">
       <div class="cmp-col">
         <div class="cmp-head"><span class="tag-old">Antiguo</span></div>
-        <img class="cmp-img" src="
-          <div class="cmp-notes">
+        <img class="cmp-img" src="">
+        <div class="cmp-notes">
           <div class="cnote bad"><div class="cnote-t">30% OFF como protagonista</div><div class="cnote-d">Lo primero que ve el usuario es un descuento. Mata la percepción de lujo antes de empezar.</div></div>
           <div class="cnote bad"><div class="cnote-t">Sin identidad visual en navbar</div><div class="cnote-d">La nav blanca sobre fondo blanco no define la marca. Podría ser cualquier tienda.</div></div>
         </div>
@@ -450,7 +487,7 @@ footer a:hover{color:var(--gold);}
       <div class="cmp-col">
         <div class="cmp-head"><span class="tag-new">Rediseño</span></div>
         <img class="cmp-img" src="">
-          <div class="cmp-notes">
+        <div class="cmp-notes">
           <div class="cnote good"><div class="cnote-t">El producto es el protagonista</div><div class="cnote-d">Tres modelos en formato tríptico llenan la pantalla. Sin ruido, sin oferta dominante.</div></div>
           <div class="cnote good"><div class="cnote-t">Navbar con identidad propia</div><div class="cnote-d">Negro, logo dorado, Sign Up con borde crema. Define la marca como premium en el primer vistazo.</div></div>
         </div>
@@ -463,7 +500,7 @@ footer a:hover{color:var(--gold);}
       <div class="cmp-col">
         <div class="cmp-head"><span class="tag-old">Antiguo</span></div>
         <img class="cmp-img" src="">
-          <div class="cmp-notes">
+        <div class="cmp-notes">
           <div class="cnote bad"><div class="cnote-t">3 columnas desiguales</div><div class="cnote-d">Mujer, Hombre y Accesorios en columnas de distinto ancho sin unidad visual.</div></div>
           <div class="cnote bad"><div class="cnote-t">Fondos de color distintos</div><div class="cnote-d">Cada cuadro tiene un tono levemente diferente. Parece descuido, no diseño.</div></div>
         </div>
@@ -471,7 +508,7 @@ footer a:hover{color:var(--gold);}
       <div class="cmp-col">
         <div class="cmp-head"><span class="tag-new">Rediseño</span></div>
         <img class="cmp-img" src="">
-          <div class="cmp-notes">
+        <div class="cmp-notes">
           <div class="cnote good"><div class="cnote-t">Grid 2×2 editorial</div><div class="cnote-d">4 cuadrantes iguales — New FW, Accesorios, Mujeres, Hombres. Orden y equilibrio.</div></div>
           <div class="cnote good"><div class="cnote-t">Fondo burgundy uniforme</div><div class="cnote-d">Mismo tono en las 4 celdas. El sistema visual es coherente de arriba abajo.</div></div>
         </div>
@@ -484,7 +521,7 @@ footer a:hover{color:var(--gold);}
       <div class="cmp-col">
         <div class="cmp-head"><span class="tag-old">Antiguo</span></div>
         <img class="cmp-img" src="">
-          <div class="cmp-notes">
+        <div class="cmp-notes">
           <div class="cnote bad"><div class="cnote-t">Fondo gris neutro sin carácter</div><div class="cnote-d">El blanco roto genérico no pertenece a ninguna identidad de marca.</div></div>
           <div class="cnote bad"><div class="cnote-t">Badges verdes "SALE"</div><div class="cnote-d">El verde brillante en cada producto convierte la tienda en un outlet, no en boutique premium.</div></div>
         </div>
@@ -492,7 +529,7 @@ footer a:hover{color:var(--gold);}
       <div class="cmp-col">
         <div class="cmp-head"><span class="tag-new">Rediseño</span></div>
         <img class="cmp-img" src="">
-          <div class="cmp-notes">
+        <div class="cmp-notes">
           <div class="cnote good"><div class="cnote-t">Navbar negra consistente</div><div class="cnote-d">El logo dorado sobre negro define el estilo en cada página, no solo en el home.</div></div>
           <div class="cnote good"><div class="cnote-t">Footer dorado con beneficios</div><div class="cnote-d">Delivery, Compra Segura, Soporte — con íconos grandes en dorado. Confianza visual.</div></div>
         </div>
@@ -505,7 +542,7 @@ footer a:hover{color:var(--gold);}
       <div class="cmp-col">
         <div class="cmp-head"><span class="tag-old">Antiguo</span></div>
         <img class="cmp-img" src="">
-          <div class="cmp-notes">
+        <div class="cmp-notes">
           <div class="cnote bad"><div class="cnote-t">Imagen pequeña, espacio desperdiciado</div><div class="cnote-d">La foto ocupa solo un tercio del ancho. El espacio vacío no está aprovechado.</div></div>
           <div class="cnote bad"><div class="cnote-t">Sin selector de color ni tallas visuales</div><div class="cnote-d">El usuario no sabe que hay más colores. Las tallas no se muestran como opciones claras.</div></div>
         </div>
@@ -513,7 +550,7 @@ footer a:hover{color:var(--gold);}
       <div class="cmp-col">
         <div class="cmp-head"><span class="tag-new">Rediseño</span></div>
         <img class="cmp-img" src="">
-          <div class="cmp-notes">
+        <div class="cmp-notes">
           <div class="cnote good"><div class="cnote-t">Galería grande + thumbnails laterales</div><div class="cnote-d">La imagen principal toma la mitad de pantalla. 3 miniaturas permiten cambiar de ángulo sin scrollear.</div></div>
           <div class="cnote good"><div class="cnote-t">Color, tallas y pago — todo visible</div><div class="cnote-d">Círculos de color, botones de talla XS/S/M/L y logos de medios de pago. Cero fricción.</div></div>
         </div>
@@ -564,6 +601,7 @@ footer a:hover{color:var(--gold);}
   <p class="prose">Diseño experiencias digitales que comunican el valor real de tu marca — antes de que el cliente lea el precio.</p>
   <a href="../index.html#contacto" class="btn">Cotizar proyecto →</a>
 </section>
+
 <!-- NAVEGACIÓN ENTRE PROYECTOS -->
 <div class="project-nav">
   <a href="../Revista-Cultural/" class="pnav-item pnav-prev">
@@ -574,10 +612,11 @@ footer a:hover{color:var(--gold);}
   <div class="pnav-divider"></div>
   <a href="../Serie-Urbana/" class="pnav-item pnav-next">
     <span class="pnav-label">Siguiente Proyecto →</span>
-    <span class="pnav-title">Serie Urbana Peruna</span>
+    <span class="pnav-title">Serie Urbana Peruana</span>
     <span class="pnav-arrow">→</span>
   </a>
 </div>
+
 <footer>
   <div class="footer-logo">
     <img src="../DEZONI-PURE ALPACA LOGO.svg" alt="Jean Deza logo" height="32">
