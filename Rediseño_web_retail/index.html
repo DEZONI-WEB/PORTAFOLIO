@@ -315,7 +315,7 @@ footer a:hover{color:var(--gold);}
 
       <!-- FONDO: diseño MODERNO (base, siempre visible) -->
       <img id="imgAfter"
-        src="../LANDING PAGE COMPLETO.jpg"
+        src="LANDING_PAGE_COMPLETO_MODERNO.jpg"
          style="display:block; width:100%; height:auto; pointer-events:none;"
         alt="Rediseño nuevo">
 
@@ -326,10 +326,18 @@ footer a:hover{color:var(--gold);}
         overflow:hidden;
       ">
         <img id="imgBefore"
-          src="../LANDING PAGE COMPLETO ANTIGUO.jpg"
+          src="LANDING_PAGE_COMPLETO_ANTIGUO.jpg"
           style="display:block; height:auto; pointer-events:none;"
           alt="Web original">
       </div>
+      <!-- LÍNEA DIVISORA -->
+      <div id="sliderLine" style="
+        position:absolute; top:0; bottom:0; left:50%;
+        transform:translateX(-50%);
+        width:2px; background:#C9A96E;
+        z-index:10; pointer-events:none;
+      "></div>
+
        <!-- HANDLE -->
       <div id="sliderHandle" style="
         position:absolute; top:50%; left:50%;
@@ -370,13 +378,11 @@ footer a:hover{color:var(--gold);}
       ">Rediseño</span>
 
     </div><!-- /sliderContainer -->
-    <!-- LÍNEA DIVISORA -->
-      <div id="sliderLine" style="
-        position:absolute; top:0; bottom:0; left:50%;
-        transform:translateX(-50%);
-        width:2px; background:#C9A96E;
-        z-index:10; pointer-events:none;
-      "></div>
+
+  </div><!-- /max-width wrapper -->
+  <p class="slider-hint">← Arrastrá el divisor para comparar →</p>
+
+</section><!-- /slider-section -->
 
 <!-- GALERÍA COMPLETA WEB NUEVA -->
 <section class="gallery-section">
