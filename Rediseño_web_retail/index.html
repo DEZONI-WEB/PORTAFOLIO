@@ -291,29 +291,92 @@ footer a:hover{color:var(--gold);}
   </div>
 </section>
 
-<!-- SLIDER COMPARADOR -->
 <section class="slider-section">
+
   <div class="slider-header reveal">
     <div class="sec-label">Comparación Directa</div>
     <h2>Desliza para ver<br><em>antiguo vs rediseño</em></h2>
-    <p class="prose" style="max-width:500px;">Arrastrá el divisor de izquierda a derecha. Izquierda = web original. Derecha = rediseño.</p>
+    <p class="prose" style="max-width:500px;">
+      Arrastrá el divisor de izquierda a derecha.<br>
+      <strong>Izquierda = web original &nbsp;·&nbsp; Derecha = rediseño</strong>
+    </p>
   </div>
-  <div class="slider-wrapper">
-    <div class="slider-container" id="sliderContainer">
-      <img class="slider-img-after" src="../LANDING PAGE COMPLETO.jpg">
-      <div class="slider-img-before-wrap" id="beforeWrap">
-        <img class="slider-img-before" src="../LANDING PAGE COMPLETO ANTIGUO.jpg">
+
+  <div style="max-width:1100px; margin:0 auto; padding:0 0 16px;">
+
+    <div id="sliderContainer" style="
+      position:relative;
+      width:100%;
+      overflow:hidden;
+      cursor:ew-resize;
+      border:0.5px solid rgba(201,169,110,0.2);
+      user-select:none;
+    ">
+
+      <!-- FONDO: diseño MODERNO (base, siempre visible) -->
+      <img id="imgAfter"
+        src="../LANDING PAGE COMPLETO.jpg"
+         style="display:block; width:100%; height:auto; pointer-events:none;"
+        alt="Rediseño nuevo">
+
+      <!-- ENCIMA: diseño ANTIGUO (se recorta al deslizar) -->
+      <div id="beforeWrap" style="
+        position:absolute; top:0; left:0;
+        height:100%; width:50%;
+        overflow:hidden;
+      ">
+        <img id="imgBefore"
+          src="../LANDING PAGE COMPLETO ANTIGUO.jpg"
+          style="display:block; height:auto; pointer-events:none;"
+          alt="Web original">
       </div>
-      <div class="slider-line" id="sliderLine"></div>
-      <div class="slider-handle" id="sliderHandle">
-        <svg viewBox="0 0 24 24"><polyline points="7,8 3,12 7,16"/><polyline points="17,8 21,12 17,16"/></svg>
+       <!-- HANDLE -->
+      <div id="sliderHandle" style="
+        position:absolute; top:50%; left:50%;
+        transform:translate(-50%,-50%);
+        width:48px; height:48px;
+        background:#0A0A08;
+        border:1.5px solid #C9A96E;
+        border-radius:50%;
+        z-index:11;
+        display:flex; align-items:center; justify-content:center;
+        pointer-events:none;
+        box-shadow:0 0 18px rgba(201,169,110,0.3);
+      ">
+        <svg width="22" height="22" viewBox="0 0 24 24"
+             fill="none" stroke="#C9A96E" stroke-width="2" stroke-linecap="round">
+          <polyline points="7,8 3,12 7,16"/>
+          <polyline points="17,8 21,12 17,16"/>
+        </svg>
       </div>
-      <span class="sl-label left">Antiguo</span>
-      <span class="sl-label right">Rediseño</span>
-    </div>
-    <p class="slider-hint">← Arrastrá para comparar →</p>
-  </div>
-</section>
+
+      <!-- ETIQUETAS -->
+      <span style="
+        position:absolute; bottom:14px; left:14px; z-index:12;
+        font-size:9px; letter-spacing:.18em; text-transform:uppercase;
+        padding:4px 11px;
+        background:rgba(0,0,0,.82); color:#555;
+        border:0.5px solid #444;
+        pointer-events:none;
+      ">Antiguo</span>
+
+      <span style="
+        position:absolute; bottom:14px; right:14px; z-index:12;
+        font-size:9px; letter-spacing:.18em; text-transform:uppercase;
+        padding:4px 11px;
+        background:rgba(0,0,0,.82); color:#C9A96E;
+        border:0.5px solid #C9A96E;
+        pointer-events:none;
+      ">Rediseño</span>
+
+    </div><!-- /sliderContainer -->
+    <!-- LÍNEA DIVISORA -->
+      <div id="sliderLine" style="
+        position:absolute; top:0; bottom:0; left:50%;
+        transform:translateX(-50%);
+        width:2px; background:#C9A96E;
+        z-index:10; pointer-events:none;
+      "></div>
 
 <!-- GALERÍA COMPLETA WEB NUEVA -->
 <section class="gallery-section">
